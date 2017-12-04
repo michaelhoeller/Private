@@ -1,18 +1,20 @@
 package code;
+
 import java.sql.Timestamp;
 
 public class Dummy {
     
+    // TODO: Zu befüllende Datenbankfelder einrichten
     private LastName  lastName;
     private SureName  sureName;
     private Timestamp birthday;
     private String    email;
     private long      phoneNumber;
     
-    public Dummy() {
+    public Dummy(Utils utils) {
         setLastName(LastName.getRandomLastName());
         setSureName(SureName.getRandomSurename());
-        setBirthday(Utils.getRandomTimestamp("1940-01-01 00:00:00", "1990-01-01 00:00:00"));
+        setBirthday(Utils.getRandomTimestamp(utils.getStartAge(), utils.getEndAge()));
     }
     
     public LastName getLastName() {
