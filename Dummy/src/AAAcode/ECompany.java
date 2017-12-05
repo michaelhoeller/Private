@@ -3,31 +3,8 @@ package AAAcode;
 import java.util.Random;
 
 public enum ECompany {
-	Bosch,
-	Datev,
-	Siemens,
-	Semikron,
-	Continental,
-	NÃ¼rnbergerNachrichten,
-	Novartis, 
-	GfK, 
-	Leoni, 
-	FÃ¼rst, 
-	Diehl, 
-	ErgoDirekt, 
-	MAN, 
-	Staedler, 
-	Prinovis, 
-	CortalConsors, 
-	Engelhardt, 
-	AlcatelLucent, 
-	INGDiba, 
-	UniVersa, 
-	VAG, 
-	SparkasseNÃ¼rnberg, 
-	nErgie, 
-	Baumuller;
-	
+    Bosch, Datev, Siemens, Semikron, Continental, NÃrnbergerNachrichten, Novartis, GfK, Leoni, FÃrst, Diehl, ErgoDirekt, MAN, Staedler, Prinovis, CortalConsors, Engelhardt, AlcatelLucent, INGDiba, UniVersa, VAG, SparkasseNÃrnberg, nErgie, Baumuller;
+    
     public static ECompany getRandomCompany() {
         Random random = new Random();
         return values()[random.nextInt(values().length)];
