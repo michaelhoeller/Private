@@ -1,4 +1,4 @@
-package code;
+package AAAcode;
 
 import java.util.Random;
 
