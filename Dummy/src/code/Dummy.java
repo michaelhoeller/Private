@@ -51,6 +51,7 @@ public class Dummy {
 	}
 
 	public ECompany getCompany() {
+
 		return company;
 	}
 

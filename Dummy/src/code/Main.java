@@ -24,6 +24,7 @@ public class Main {
 		Utils.printEndingToFile(out);
 		out.close();
 		System.out.println("Finished");
+
 	}
 
 }
