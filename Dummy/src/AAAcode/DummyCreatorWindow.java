@@ -22,9 +22,9 @@ import javax.swing.SwingUtilities;
 public class DummyCreatorWindow {
 
 	private JFrame frmDummyGeneratorV;
-	private JTextField textFieldSaveLocation;
-	private JTextField textFieldDummyAmount;
-	static JProgressBar progressBar = new JProgressBar(0, 1000000 );
+	private static JTextField textFieldSaveLocation;
+	private static JTextField textFieldDummyAmount;
+	static JProgressBar progressBar = new JProgressBar(0, 1000000);
 
 	/**
 	 * Launch the application.
@@ -51,7 +51,7 @@ public class DummyCreatorWindow {
 		initialize();
 	}
 
-	static class ButtonActionListener implements ActionListener {
+	static class AbbrechenListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			new Thread(new Runnable() {
@@ -64,18 +64,26 @@ public class DummyCreatorWindow {
 							@Override
 							public void run() {
 								progressBar.setValue(j);
-								System.out.println("Test " + j);
-								// try {
-								// Thread.sleep(10);
-								// } catch (InterruptedException e) {
-								// // TODO Auto-generated catch block
-								// e.printStackTrace();
-								// }
 							}
 						});
 					}
 				}
 			}).start();
+		}
+	}
+
+	static class GenerierenListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			try {
+				Main.doStuff(textFieldSaveLocation.getText(), Integer.parseInt(textFieldDummyAmount.getText()));
+			} catch (NumberFormatException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
 
@@ -89,35 +97,22 @@ public class DummyCreatorWindow {
 		frmDummyGeneratorV.setForeground(new Color(0, 0, 0));
 		frmDummyGeneratorV.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		frmDummyGeneratorV.setTitle("Dummy Generator V1.0");
-		frmDummyGeneratorV.setIconImage(Toolkit.getDefaultToolkit()
-				.getImage(DummyCreatorWindow.class.getResource("/recourses/elite-dangerous-logo_grey.png")));
+		frmDummyGeneratorV.setIconImage(
+				Toolkit.getDefaultToolkit().getImage(DummyCreatorWindow.class.getResource("/recourses/logo.png")));
 		frmDummyGeneratorV.getContentPane().setBackground(new Color(176, 196, 222));
 
-		JButton btnCreate = new JButton("Dummys Generieren");
-		btnCreate.setForeground(new Color(0, 0, 0));
-		btnCreate.setFont(new Font("Segoe UI", Font.PLAIN, 18));
-		btnCreate.setBackground(new Color(46, 139, 87));
-		btnCreate.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				try {
-					Main.doStuff(textFieldSaveLocation.getText(), Integer.parseInt(textFieldDummyAmount.getText()));
-				} catch (NumberFormatException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			}
-		});
-
+		// ProgressBar
 		progressBar.setForeground(new Color(0, 0, 0));
 
-		JButton btnAbbrechen = new JButton("Abbrechen");
-		btnAbbrechen.addActionListener(new ButtonActionListener());
+		// Button1
+		JButton btnCreate = new JButton("Dummys Generieren");
+		btnCreate.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+		btnCreate.setBackground(new Color(46, 139, 87));
+		btnCreate.addActionListener(new GenerierenListener());
 
+		// Button2
+		JButton btnAbbrechen = new JButton("Abbrechen");
+		btnAbbrechen.addActionListener(new AbbrechenListener());
 		btnAbbrechen.setForeground(Color.BLACK);
 		btnAbbrechen.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		btnAbbrechen.setBackground(new Color(255, 69, 0));
