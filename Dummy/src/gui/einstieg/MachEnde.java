@@ -208,6 +208,7 @@ public class MachEnde extends JFrame {
 			final Integer throwAmountfromField = Integer.parseInt(lbThrowAmountDisplay.getText());
 			progressBar.setValue(0);
 			progressBar.setMaximum(throwAmountfromField);
+
 			try {
 				if (throwAmountfromField <= 0) {
 					throw new NumberFormatException();
