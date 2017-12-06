@@ -24,7 +24,7 @@ public class DummyCreatorWindow {
 	private JFrame frmDummyGeneratorV;
 	private JTextField textFieldSaveLocation;
 	private JTextField textFieldDummyAmount;
-	static JProgressBar progressBar = new JProgressBar(0, 1000000);
+	static JProgressBar progressBar = new JProgressBar(0, 1000000 );
 
 	/**
 	 * Launch the application.
