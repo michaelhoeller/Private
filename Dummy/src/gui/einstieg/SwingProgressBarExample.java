@@ -1,4 +1,4 @@
-package AAAcode;
+package gui.einstieg;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
