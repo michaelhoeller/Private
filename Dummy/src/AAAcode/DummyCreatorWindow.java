@@ -190,7 +190,7 @@ public class DummyCreatorWindow {
 														.addComponent(lblAnzahl, GroupLayout.PREFERRED_SIZE, 220,
 																Short.MAX_VALUE)
 														.addComponent(textFieldSaveLocation))
-												.addPreferredGap(ComponentPlacement.RELATED, 298, Short.MAX_VALUE)
+												.addPreferredGap(ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
 												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 														.addComponent(tglbtnStakeholderGenerieren,
 																GroupLayout.PREFERRED_SIZE, 225,
@@ -201,7 +201,8 @@ public class DummyCreatorWindow {
 		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup().addContainerGap()
 						.addComponent(labelTitel, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE).addGap(37)
-						.addComponent(labelSaveLocation).addPreferredGap(ComponentPlacement.RELATED)
+						.addComponent(labelSaveLocation)
+						.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addGroup(groupLayout
 								.createParallelGroup(
 										Alignment.LEADING)
@@ -211,15 +212,15 @@ public class DummyCreatorWindow {
 										.addGap(18)
 										.addComponent(lblAnzahl, GroupLayout.PREFERRED_SIZE, 22,
 												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED).addComponent(textFieldDummyAmount,
-												GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(textFieldDummyAmount, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 								.addComponent(tglbtnUserGenerieren, GroupLayout.PREFERRED_SIZE, 82,
 										GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(ComponentPlacement.UNRELATED)
 						.addComponent(tglbtnStakeholderGenerieren, GroupLayout.PREFERRED_SIZE, 82,
 								GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
+						.addGap(204)
 						.addComponent(progressBar, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(ComponentPlacement.RELATED)
 						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE).addComponent(btnCreate)
