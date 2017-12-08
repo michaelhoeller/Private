@@ -13,10 +13,10 @@ public class MainWindow extends SuperGUI {
 	private JButton btnSchereSteinPapier;
 	private JButton btnTicTacToe;
 	private JButton btnTicTacToePC;
+	private JButton btnBattleships;
 
 	public MainWindow() {
 		super("Main Menu");
-
 	}
 
 	@Override
@@ -39,11 +39,21 @@ public class MainWindow extends SuperGUI {
 		btnTicTacToePC.setBounds(10, 244, 200, 40);
 		btnTicTacToePC.addActionListener(e -> startTicTacToe(false));
 
+		btnBattleships = new JButton("Battleships");
+		btnBattleships.setBounds(281, 11, 293, 80);
+		btnBattleships.addActionListener(e -> startBattleships());
+
 		getContentPane().add(btnSchereSteinPapier);
 		getContentPane().add(btnWrfelstatistik);
 		getContentPane().add(btnTicTacToe);
 		getContentPane().add(btnTicTacToePC);
+		getContentPane().add(btnBattleships);
 
+	}
+
+	private void startBattleships() {
+		this.dispose();
+		new Battleships();
 	}
 
 	private void startWuerfelStatistik() {
