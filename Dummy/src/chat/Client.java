@@ -140,6 +140,7 @@ public class Client {
 				client.sendMessage(new ChatMessage(ChatMessage.MESSAGE, msg));
 			}
 		}
+		scan.close();
 		client.disconnect();
 	}
 
